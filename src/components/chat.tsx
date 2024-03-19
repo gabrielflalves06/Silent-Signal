@@ -1,7 +1,7 @@
 import { LinearGradient } from "expo-linear-gradient";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native"
 
-const Chat = ({ navigation }) => {
+const Chat = ({ navigation, num }) => {
     return (
         <LinearGradient
             colors={['#FFFFFF', '#1479C3']}
@@ -11,7 +11,7 @@ const Chat = ({ navigation }) => {
         >
             <TouchableOpacity
                 style={styles.chat}
-                onPress={() => navigation.navigate("Chats")}
+                onPress={() => navigation.navigate("Chat")}
             >
                 <Image
                     source={require("../assets/Amigo.png")}
@@ -19,7 +19,7 @@ const Chat = ({ navigation }) => {
                 />
                 <View style={styles.containerMensagem}>
                     <Text style={styles.nome}>
-                        Geraldo Luiz
+                        Geraldo Luiz {num}
                     </Text>
                     <Text style={styles.mensagem}>
                         Oi, tudo bem? Vi seu projeto e queria dizer que está muito bom

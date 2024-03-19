@@ -15,7 +15,7 @@ const Home = ({navigation}) => {
                 <Text style={styles.slogan}>Silent Signal a plataforma de texto mais anônima que existe</Text>
             </View>
 
-            <Button navigation={navigation} tela={'Register'} />
+            <Button navigation={navigation} tela={'Login'} />
         </View>
     );
 };

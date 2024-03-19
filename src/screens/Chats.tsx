@@ -1,15 +1,12 @@
-import { Image, StyleSheet, Text, TextInput, View, ScrollView, Touchable, TouchableOpacity } from "react-native";
+import { Image, StyleSheet, Text, TextInput, View, ScrollView, TouchableOpacity } from "react-native";
 import Chat from "../components/chat";
-
-
-
 
 const Chats = ({ navigation }) => {
 
     const renderizarMensagens = () => {
         const mensagem = [];
         for (let index = 0; index < 12; index++) {
-            mensagem.push(<Chat key={index} navigation={navigation} />);
+            mensagem.push(<Chat num={index} key={index} navigation={navigation} />);
         }
         return mensagem;
     };
@@ -19,7 +16,7 @@ const Chats = ({ navigation }) => {
         <View>
             <View style={styles.title}>
                 <Text style={styles.titulo}>Chat</Text>
-                <TouchableOpacity onPress={() => navigation.navigate('Perfil') }>
+                <TouchableOpacity onPress={() => navigation.navigate('Perfil')}>
                     <Image
                         source={require('../assets/Perfil.png')}
                         style={styles.perfil}
@@ -46,7 +43,7 @@ const styles = StyleSheet.create({
     container: {
         alignItems: 'center',
         borderBottomWidth: 3,
-        borderBlockColor:"#1479C3"
+        borderBlockColor: "#1479C3"
     },
 
     title: {
@@ -89,7 +86,7 @@ const styles = StyleSheet.create({
     },
 
     contentContainer: {
-        paddingBottom: 170, // Adicionando um paddingBottom para acomodar a última mensagem
+        paddingBottom: 170,
     },
 })
 

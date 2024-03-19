@@ -1,7 +1,7 @@
-import { Image, Keyboard, KeyboardAvoidingView, Platform, ScrollView, StyleSheet, Text, TextInput, TouchableWithoutFeedback, View } from "react-native";
+import { Image, Keyboard, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, TouchableWithoutFeedback, View } from "react-native";
 import Button from '../components/button';
 
-const Register = ({ navigation }) => {
+const Login = ({ navigation }) => {
     return (
         <ScrollView contentContainerStyle={styles.scrollContainer}>
 
@@ -12,26 +12,24 @@ const Register = ({ navigation }) => {
                         source={require('../assets/Register.png')}
                         style={styles.image}
                     />
-                    <Text style={styles.texto}>Register</Text>
+                    <Text style={styles.texto}>Sing Up</Text>
 
-                    <View style={styles.inputs}>
+                    <View>
                         <TextInput
                             style={styles.input}
-                            placeholder="Email"
+                            placeholder="Username"
                         />
 
                         <TextInput
                             style={styles.input}
                             placeholder="Password"
                         />
-
-
-                        <TextInput
-                            style={styles.input}
-                            placeholder="Confirm Password"
-                        />
+                        <TouchableOpacity style={styles.register} onPress={() => navigation.navigate('Register')}>
+                            <Text>Clique aqui para se Cadastrar</Text>
+                        </TouchableOpacity>
                     </View>
-                    <Button navigation={navigation} tela={'Login'} />
+
+                    <Button navigation={navigation} tela={'Chats'} />
                 </View>
             </TouchableWithoutFeedback>
         </ScrollView>
@@ -66,15 +64,16 @@ const styles = StyleSheet.create({
         borderRadius: 100,
     },
 
-    inputs: {
-        margin: 20,
-    },
-
     scrollContainer: {
         flexGrow: 1,
         justifyContent: 'center',
     },
 
+    register: {
+        marginBottom: 30,
+        alignItems: "center",
+    }
+
 });
 
-export default Register;
+export default Login;
